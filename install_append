@@ -1,0 +1,13 @@
+%global _sysconfdir '/usr/local/etc'
+# nfv-plugins
+install -d -m 755 %{buildroot}/usr/local/etc/nfv/
+install -d -m 755 %{buildroot}/usr/local/etc/nfv/nfv_plugins/
+install -d -m 755 %{buildroot}/usr/local/etc/nfv/nfv_plugins/alarm_handlers/
+install -p -D -m 600 nfv/nfv-plugins/nfv_plugins/alarm_handlers/config.ini %{buildroot}/usr/local/etc/nfv/nfv_plugins/alarm_handlers/config.ini
+install -d -m 755 %{buildroot}/usr/local/etc/nfv/nfv_plugins/event_log_handlers/
+install -p -D -m 600 nfv/nfv-plugins/nfv_plugins/event_log_handlers/config.ini %{buildroot}/usr/local/etc/nfv/nfv_plugins/event_log_handlers/config.ini
+install -d -m 755 %{buildroot}/usr/local/etc/nfv/nfv_plugins/nfvi_plugins/
+install -p -D -m 600 nfv/nfv-plugins/nfv_plugins/nfvi_plugins/config.ini %{buildroot}/usr/local/etc/nfv/nfv_plugins/nfvi_plugins/config.ini
+install -d -m 755 %{buildroot}/
+install -p -D -m 644 nfv/nfv-plugins/scripts/nfvi-plugins.logrotate %{buildroot}/usr/local/etc/logrotate.d/nfvi-plugins.logrotate
+%clean
